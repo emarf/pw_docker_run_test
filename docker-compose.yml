@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  pw:
+    image: pw_zebr
+    environment:
+      - TEST_ENVIRONMENT
+      - BUILD_INFO
+      - ZEB_API_KEY
+      - REPORTING_RUN_CONTEXT
+    volumes:
+      - ./tests:/app/tests
+    command: npx playwright test 
